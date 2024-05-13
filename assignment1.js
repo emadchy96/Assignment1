@@ -12,7 +12,6 @@
 console.log('Hello World!');
 
 //Step 3
-// Step 3: Define server paths and responses
 const serverVerbs = ["GET", "GET", "GET", "POST", "GET", "POST"];
 const serverPaths = ["/", "/about", "/contact", "/login", "/panel", "/logout"];
 const serverResponses = [
@@ -23,5 +22,16 @@ const serverResponses = [
   "Main Panel",
   "Logout Complete"
 ];
+
+//Step 4
+function httpRequest(httpVerb, path) {
+    for (let i = 0; i < serverPaths.length; i++) {
+      if (serverVerbs[i] === httpVerb && serverPaths[i] === path) {
+        return `200: ${serverResponses[i]}`;
+      }
+    }
+    return `404: Unable to process ${httpVerb} request for ${path}`;
+  }
+  
 
 
