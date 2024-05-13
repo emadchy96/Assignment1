@@ -8,5 +8,20 @@
 *
 ********************************************************************************/
 
-// Step 1
+// Step 1 & 2
 console.log('Hello World!');
+
+//Step 3
+// Step 3: Define server paths and responses
+const serverVerbs = ["GET", "GET", "GET", "POST", "GET", "POST"];
+const serverPaths = ["/", "/about", "/contact", "/login", "/panel", "/logout"];
+const serverResponses = [
+  "Welcome to WEB700 Assignment 1",
+  "This assignment was prepared by Emad Chowdhury",
+  "Student Name: Emad Chowdhury Student Email: echowdhury7@myseneca.ca",
+  "User Logged In",
+  "Main Panel",
+  "Logout Complete"
+];
+
+
