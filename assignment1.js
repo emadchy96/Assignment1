@@ -33,15 +33,43 @@ function httpRequest(httpVerb, path) {
     return `404: Unable to process ${httpVerb} request for ${path}`;
   }
   
-  //Step 5
+  //Step 5 Manual Testing
+
 console.log(httpRequest("GET", "/")); 
 console.log(httpRequest("GET", "/about"));
-console.log(httpRequest("PUT", "/")); 
+console.log(httpRequest("POST","/logout"));
+console.log(httpRequest("GET","/login"));
+console.log(httpRequest("PUT", "/"));
 
 
-//Step 6
+
+//Step 6 automation testing
+
+//random integer 
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * (max + 1));
+}
+
+// Define the automateTests function
 function automateTests() {
-    const testVerbs = ["GET", "POST"];
-    const testPaths = ["/", "/about", "/contact", "/login", "/panel", "/logout", "/randomPath1", "/randomPath2"];
-}  
+  const testVerbs = ["GET", "POST"];
+  const testPaths = ["/", "/about", "/contact", "/login", "/panel", "/logout", "/randomPath1", "/randomPath2"];
 
+  //Preparing a random request
+  function randomRequest() {
+    const randVerb = testVerbs[getRandomInt(1)];
+    const randPath = testPaths[getRandomInt(7)];
+    
+    //the random result from http request function
+    const result = httpRequest(randVerb, randPath);
+    
+    //Showing the output
+    console.log(result);
+  }
+
+  //Interval of one second between each testing
+  setInterval(randomRequest, 1000);
+}
+
+automateTests();
