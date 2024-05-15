@@ -33,5 +33,15 @@ function httpRequest(httpVerb, path) {
     return `404: Unable to process ${httpVerb} request for ${path}`;
   }
   
+  //Step 5
+console.log(httpRequest("GET", "/")); 
+console.log(httpRequest("GET", "/about"));
+console.log(httpRequest("PUT", "/")); 
 
+
+//Step 6
+function automateTests() {
+    const testVerbs = ["GET", "POST"];
+    const testPaths = ["/", "/about", "/contact", "/login", "/panel", "/logout", "/randomPath1", "/randomPath2"];
+}  
 
