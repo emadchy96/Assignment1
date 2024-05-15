@@ -5,13 +5,14 @@
 * (including web sites) or distributed to other students.
 *
 * Name: Emad Chowdhury Student ID: 161788237 Date: 13 May 2024
+* Github repo: https://github.com/emadchy96/Assignment1
 *
 ********************************************************************************/
 
-// Step 1 & 2
+// Step 1 & 2 Basic testing
 console.log('Hello World!');
 
-//Step 3
+//Step 3 Assigning the verbs, paths and responses to array variables
 const serverVerbs = ["GET", "GET", "GET", "POST", "GET", "POST"];
 const serverPaths = ["/", "/about", "/contact", "/login", "/panel", "/logout"];
 const serverResponses = [
@@ -23,7 +24,7 @@ const serverResponses = [
   "Logout Complete"
 ];
 
-//Step 4
+//Step 4 Matching the verbs with the paths
 function httpRequest(httpVerb, path) {
     for (let i = 0; i < serverPaths.length; i++) {
       if (serverVerbs[i] === httpVerb && serverPaths[i] === path) {
